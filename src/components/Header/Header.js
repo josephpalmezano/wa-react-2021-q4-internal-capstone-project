@@ -8,6 +8,7 @@ const NavHeader = styled.header`
   padding: 18px;
   @media (max-width: 640px) {
     flex-direction: column;
+    max-height: 140px;
   }
 `;
 
