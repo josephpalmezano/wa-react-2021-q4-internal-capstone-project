@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const FooterWrapper = styled.div`
-  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
