@@ -1,14 +1,13 @@
 .carousel-prev, .carousel-next{
   position: absolute;
-  top:50%;
-  transform: translateY(-50%);
   cursor: pointer;
+  bottom: 15%;
 }
 .carousel-prev{
-  left: 40px;
+  left: 60px;
 }
 .carousel-next{
-  right: 40px;
+  right: 60px;
 }
 
 .arrow-nav {

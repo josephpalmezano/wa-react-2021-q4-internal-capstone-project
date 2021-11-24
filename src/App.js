@@ -14,7 +14,7 @@ function App() {
         <h1>Categories</h1>
         <Carousel></Carousel>
       </div>
-      <div style={{ marginTop: "15%", padding: "18px" }}>
+      <div style={{padding: "18px" }}>
         <h1>Featured Products</h1>
         <ProductGrid></ProductGrid>
       </div>

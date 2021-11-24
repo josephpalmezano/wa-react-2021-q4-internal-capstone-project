@@ -2,10 +2,6 @@
   max-width: 98%;
   width: 98%;
   min-height: 300px;
-  position: absolute;
-  top:82%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   margin: auto;
   padding: 20px 0 20px;
 }
