@@ -99,11 +99,11 @@ const RightWrapper = styled.div`
 
 const Header = () => (
   <NavHeader>
-    <Logo><span>WIZE</span>SNEAKERS</Logo>
+    <Logo><span>WIZE</span>HOME</Logo>
     <NavigationWrapper>
-      <NavigationItem active>MEN</NavigationItem>
-      <NavigationItem>WOMEN</NavigationItem>
-      <NavigationItem>KIDS</NavigationItem>
+      <NavigationItem active></NavigationItem>
+      <NavigationItem></NavigationItem>
+      <NavigationItem></NavigationItem>
     </NavigationWrapper>
     <RightWrapper>
       <SearchInput placeholder="Search"></SearchInput>
