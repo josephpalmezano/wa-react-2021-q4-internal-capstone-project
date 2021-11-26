@@ -8,8 +8,8 @@ import ProductGrid from "../src/components/Products/ProductGrid.js";
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Slider></Slider>
+      <Header/>
+      <Slider/>
       <div style={{ padding: "18px" }}>
         <h1>Categories</h1>
         <Carousel></Carousel>
