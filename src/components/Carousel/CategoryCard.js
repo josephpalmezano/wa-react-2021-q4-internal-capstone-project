@@ -6,11 +6,11 @@ export default class CategoryCard extends React.Component {
     const { data } = this.props;
     return (
       <>
-        {data.map((obj, index) => (
-          <div className="carousel-card" key={obj.id}>
-            <img src={obj.data.main_image.url} alt="" />
+        {data.map(({ id, data: { main_image, name } }, index) => (
+          <div className="carousel-card" key={id}>
+            <img src={main_image.url} alt="" />
             <div>
-              <h2>{obj.data.name}</h2>
+              <h2>{name}</h2>
             </div>
           </div>
         ))}
