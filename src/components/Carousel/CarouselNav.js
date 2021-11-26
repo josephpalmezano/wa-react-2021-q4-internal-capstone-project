@@ -2,19 +2,21 @@ import React from "react";
 import "./CarouselNav.css";
 
 export default class CarouselNav extends React.Component {
-  prev = (wrapperRef) => {
-    const slide = wrapperRef.current;
-    slide.scrollLeft -= slide.offsetWidth;
-    if (slide.scrollLeft <= 0) {
-      slide.scrollLeft = slide.scrollWidth;
+  const prev = ({ current }) => {
+    let { scrollLeft } = current;
+    const { offsetWidth } = current;
+    scrollLeft -= offsetWidth;
+    if (scrollLeft <= 0) {
+      scrollLeft = scrollWidth;
     }
   };
 
-  next = (wrapperRef) => {
-    const slide = wrapperRef.current;
-    slide.scrollLeft += slide.offsetWidth;
-    if (slide.scrollLeft >= slide.scrollWidth - slide.offsetWidth) {
-      slide.scrollLeft = 0;
+  const next = ({ current }) => {
+    let { scrollLeft, scrollWidth, offsetWidth } = current;
+    const { scrollWidth, offsetWidth } = current;
+    scrollLeft += offsetWidth;
+    if (scrollLeft >= scrollWidth - offsetWidth) {
+      scrollLeft = 0;
     }
   };
 
