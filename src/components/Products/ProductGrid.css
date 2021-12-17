@@ -3,3 +3,21 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.all-products-btn {
+  width: 20rem;
+  height: 3rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem;
+  border: none;
+  color: white;
+  background-color: #d32f2f;
+  cursor: pointer;
+  margin-top: 3rem;
+}
