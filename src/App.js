@@ -1,9 +1,9 @@
 import "./App.css";
-import Header from "../src/components/Header/Header.js";
+import Header from "../src/components/Header/Header.jsx";
 import Footer from "../src/components/Footer/Footer.js";
-import Slider from "../src/components/Slider/Slider.js";
-import Carousel from "../src/components/Carousel/Carousel.js";
-import ProductGrid from "../src/components/Products/ProductGrid.js";
+import Slider from "../src/components/Slider/Slider.jsx";
+import Carousel from "../src/components/Carousel/Carousel.jsx";
+import ProductGrid from "../src/components/Products/ProductGrid.jsx";
 
 function App() {
   return (
