@@ -1,0 +1,28 @@
+.sidebar {
+  background-color: rgb(247, 247, 247);
+  padding: 1em;
+  margin-left: 1rem;
+  color: rgb(113, 113, 113);
+  font-weight: bold;
+}
+
+li {
+  margin: 1rem 0;
+}
+
+.dropdown-sidebar {
+  display: none;
+  height: 40px;
+  width: 100%;
+  background: tomato;
+}
+
+@media screen and (max-width: 1024px) {
+  sidebar {
+    display: none !important;
+  }
+
+  .dropdown-sidebar {
+    display: flex;
+  }
+}
