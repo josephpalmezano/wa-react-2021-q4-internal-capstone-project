@@ -8,8 +8,7 @@ function Slider(props) {
   const [slideIndex, setSlideIndex] = useState(1);
   const [dataSlider] = useState(FeaturedBanners.results);
   const featured = useFeaturedBanners()
-  console.log(featured)
-  
+
   const nextSlide = () => {
     if (slideIndex !== dataSlider.length) {
       setSlideIndex(slideIndex + 1 );

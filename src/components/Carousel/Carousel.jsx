@@ -1,19 +1,26 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import "./Carousel.css";
 import CategoryCard  from "./CategoryCard.jsx";
 import CarouselNav  from "./CarouselNav";
-import ProductCategories from "../../mocks/en-us/product-categories.json";
+import useProductCategories from "../../utils/hooks/useProductCategories.js";
 
 function Carousel() {
   const cardRef = useRef(React.createRef());
-  const [data] = useState(ProductCategories.results);
+  const categories = useProductCategories();
+
   return (
-    <div className="carousel-wrapper">
-      <div className="card-wrapper" ref={cardRef}>
-        <CategoryCard data={data} />
+    <React.Fragment>
+      {categories.isLoading ? (
+        <div>Loading...</div>
+      ) : (
+      <div className="carousel-wrapper">
+        <div className="card-wrapper" ref={cardRef}>
+          <CategoryCard data={categories.data.results} />
+        </div>
+        <CarouselNav wrapperRef={cardRef}></CarouselNav>
       </div>
-      <CarouselNav wrapperRef={cardRef}></CarouselNav>
-    </div>
+      )}
+    </React.Fragment>
   );
 }
 
