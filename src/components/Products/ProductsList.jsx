@@ -1,24 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./ProductsList.css";
 import ProductThumb  from "./ProductThumb";
 import Sidebar from "../Sidebar/Sidebar";
-import Products from "../../mocks/en-us/products.json";
+import useQuery from "../../utils/hooks/useQuery.js";
+import useProducts from "../../utils/hooks/useProducts.js";
 
 function ProductsList() {
-  let [selectedCategory, setSelectedCategory] = useState("")
-  let [data] = useState(Products.results);
-  let [products, setProducts] = useState([]);
-  useEffect(() => {
-    setProducts(selectedCategory.length > 0 ? data.filter(d => d.data.category.id === selectedCategory) : data);
-  },[data, selectedCategory]);
+  let [selectedCategory, setSelectedCategory] = useState(null)
+  let products = useProducts();
+  let query = useQuery();
+  
+  const getProducts = () => {
+    return selectedCategory ? products.data.results.filter(d => d.data.category.id === selectedCategory) : products.data.results;
+  };
 
   return (
     <>
       <main>
         <Sidebar setSelectedCategory={setSelectedCategory}/>
-        <div className="thumb-wrapper">
-          <ProductThumb data={products} />
-        </div>
+        <React.Fragment>
+        {products.isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <div className="thumb-wrapper">
+            <ProductThumb data={getProducts()} category={query.get("category")} />
+          </div>
+        )}
+        </React.Fragment>
       </main>
     </>
   );

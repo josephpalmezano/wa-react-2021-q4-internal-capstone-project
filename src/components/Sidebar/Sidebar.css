@@ -8,6 +8,7 @@
 
 li {
   margin: 1rem 0;
+  cursor: pointer;
 }
 
 .dropdown-sidebar {
