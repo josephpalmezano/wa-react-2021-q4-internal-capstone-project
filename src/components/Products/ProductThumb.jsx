@@ -1,5 +1,8 @@
 import React from "react";
 import "./ProductThumb.css";
+import {
+  Link,
+} from "react-router-dom";
 
 function ProductThumb(props) {
   const data = props.category ? props.data.filter(d => d.data.category.id === props.category) : props.data;
@@ -15,7 +18,7 @@ function ProductThumb(props) {
             <img alt="" src={obj.data.mainimage.url} />
           </div>
           <div className="info">
-            <p>{obj.data.name}</p>
+            <Link to={`detail/${obj.id}`}>{obj.data.name}</Link>
             <span className="cart-icon">&#128722;</span>
           </div>
         </div>

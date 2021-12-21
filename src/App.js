@@ -9,6 +9,8 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import ProductDetailPage from "./components/Products/ProductDetailPage";
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} exact/>
           <Route path="products" element={<ProductsList />}/>
+          <Route path="detail/:id" element={<ProductDetailPage />} />
         </Routes>
       </BrowserRouter>
       <Footer></Footer>
