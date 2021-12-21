@@ -1,23 +1,24 @@
 import "./App.css";
-import Header from "../src/components/Header/Header.js";
+import Header from "../src/components/Header/Header.jsx";
 import Footer from "../src/components/Footer/Footer.js";
-import Slider from "../src/components/Slider/Slider.js";
-import Carousel from "../src/components/Carousel/Carousel.js";
-import ProductGrid from "../src/components/Products/ProductGrid.js";
+import Home from "../src/components/Home/Home.jsx";
+import ProductsList from "../src/components/Products/ProductsList.jsx";
 
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Slider/>
-      <div style={{ padding: "18px" }}>
-        <h1>Categories</h1>
-        <Carousel></Carousel>
-      </div>
-      <div style={{padding: "18px" }}>
-        <h1>Featured Products</h1>
-        <ProductGrid></ProductGrid>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} exact/>
+          <Route path="products" element={<ProductsList />}/>
+        </Routes>
+      </BrowserRouter>
       <Footer></Footer>
     </div>
   );

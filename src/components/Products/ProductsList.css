@@ -1,0 +1,20 @@
+main {
+  margin: 32px 0;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 480px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+}
