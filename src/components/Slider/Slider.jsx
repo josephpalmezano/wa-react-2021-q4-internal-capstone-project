@@ -2,12 +2,10 @@ import React, {useState} from "react";
 import "./Slider.css";
 import SliderNavButton from "./SliderNavButton.jsx";
 import FeaturedBanners from "../../mocks/en-us/featured-banners.json";
-import useFeaturedBanners from "../../utils/hooks/useFeaturedBanners.js";
 
 function Slider(props) {
   const [slideIndex, setSlideIndex] = useState(1);
   const [dataSlider] = useState(FeaturedBanners.results);
-  const featured = useFeaturedBanners()
 
   const nextSlide = () => {
     if (slideIndex !== dataSlider.length) {
@@ -26,30 +24,24 @@ function Slider(props) {
   };
   
   return (
-    <React.Fragment>
-      {featured.isLoading ? (
-        <div>Loading...</div>
-      ) : (
-      <div className="container-slider">
-        {featured.data.results.map((obj, index) => {
-          return (
-            <div
-              key={obj.id}
-              className={
-                slideIndex === index + 1
-                  ? "slide active-anim"
-                  : "slide"
-              }
-            >
-              <img alt="" src={obj.data.main_image.url} />
-            </div>
-          );
-        })}
-        <SliderNavButton moveSlide={nextSlide} direction={"next"} />
-        <SliderNavButton moveSlide={prevSlide} direction={"prev"} />
-      </div>
-      )}
-      </React.Fragment>
+    <div className="container-slider">
+      {dataSlider.map((obj, index) => {
+        return (
+          <div
+            key={obj.id}
+            className={
+              slideIndex === index + 1
+                ? "slide active-anim"
+                : "slide"
+            }
+          >
+            <img alt="" src={obj.data.main_image.url} />
+          </div>
+        );
+      })}
+      <SliderNavButton moveSlide={nextSlide} direction={"next"} />
+      <SliderNavButton moveSlide={prevSlide} direction={"prev"} />
+    </div>
   );
 }
 
