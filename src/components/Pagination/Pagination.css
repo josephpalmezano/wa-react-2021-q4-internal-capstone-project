@@ -1,0 +1,10 @@
+.page-link {
+  display: inline-block;
+  color: blue;
+  font-size: 1em;
+  padding: 1rem;
+}
+
+.pagination-nav {
+  list-style-type: none;
+}
