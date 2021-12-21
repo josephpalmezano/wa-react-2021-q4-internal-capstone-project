@@ -1,0 +1,13 @@
+.carousel-wrapper{
+  max-width: 98%;
+  width: 98%;
+  min-height: 300px;
+  margin: auto;
+  padding: 20px 0 20px;
+}
+
+.card-wrapper{
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
