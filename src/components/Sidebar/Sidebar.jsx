@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Sidebar.css";
-import Categories from "../../mocks/en-us/product-categories.json";
+import useProductCategories from "../../utils/hooks/useProductCategories.js";
 
 function Sidebar(props) {
-  const [data] = useState(Categories.results);
+  const categories = useProductCategories();
+  console.log(props)
   return (
-    <>
-      <div className="sidebar">
-        <ul>
-          {data.map((obj, index) => (
-            <li key={obj.id} onClick={()=> props.setSelectedCategory(obj.id)}>
-              {obj.data.name}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="dropdown-sidebar center">Categories</div>
-    </>
+    <React.Fragment>
+      {categories.isLoading ? (
+        <div>Loading...</div>
+      ) : (
+      <>
+        <div className="sidebar">
+          <ul>
+            {categories.data.results.map((obj, index) => (
+              <li key={obj.id} onClick={()=> props.setSelectedCategory(obj.id)}>
+                {obj.data.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="dropdown-sidebar center">Categories</div>
+      </>
+      )}
+    </React.Fragment>
   );
 }
 
